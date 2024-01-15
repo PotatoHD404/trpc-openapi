@@ -34,7 +34,7 @@ yarn add @potatohd/trpc-openapi
 
 ```typescript
 import { initTRPC } from '@trpc/server';
-import { OpenApiMeta } from 'trpc-openapi';
+import { OpenApiMeta } from '@potatohd/trpc-openapi';
 
 const t = initTRPC.meta<OpenApiMeta>().create(); /* 👈 */
 ```
@@ -56,7 +56,7 @@ export const appRouter = t.router({
 **4. Generate an OpenAPI document.**
 
 ```typescript
-import { generateOpenApiDocument } from 'trpc-openapi';
+import { generateOpenApiDocument } from '@potatohd/trpc-openapi';
 
 import { appRouter } from '../appRouter';
 
@@ -76,7 +76,7 @@ We currently support adapters for [`Express`](http://expressjs.com/), [`Next.js`
 
 ```typescript
 import http from 'http';
-import { createOpenApiHttpHandler } from 'trpc-openapi';
+import { createOpenApiHttpHandler } from '@potatohd/trpc-openapi';
 
 import { appRouter } from '../appRouter';
 
@@ -191,7 +191,7 @@ Explore a [complete example here](examples/with-nextjs/src/server/router.ts).
 
 ```typescript
 import { TRPCError, initTRPC } from '@trpc/server';
-import { OpenApiMeta } from 'trpc-openapi';
+import { OpenApiMeta } from '@potatohd/trpc-openapi';
 
 type User = { id: string; name: string };
 
@@ -250,7 +250,7 @@ Please see [full example here](examples/with-express).
 ```typescript
 import { createExpressMiddleware } from '@trpc/server/adapters/express';
 import express from 'express';
-import { createOpenApiExpressMiddleware } from 'trpc-openapi';
+import { createOpenApiExpressMiddleware } from '@potatohd/trpc-openapi';
 
 import { appRouter } from '../appRouter';
 
@@ -268,7 +268,7 @@ Please see [full example here](examples/with-nextjs).
 
 ```typescript
 // pages/api/[...trpc].ts
-import { createOpenApiNextHandler } from 'trpc-openapi';
+import { createOpenApiNextHandler } from '@potatohd/trpc-openapi';
 
 import { appRouter } from '../../server/appRouter';
 
@@ -280,7 +280,7 @@ export default createOpenApiNextHandler({ router: appRouter });
 Please see [full example here](examples/with-serverless).
 
 ```typescript
-import { createOpenApiAwsLambdaHandler } from 'trpc-openapi';
+import { createOpenApiAwsLambdaHandler } from '@potatohd/trpc-openapi';
 
 import { appRouter } from './appRouter';
 
@@ -294,7 +294,7 @@ Please see [full example here](examples/with-fastify).
 ```typescript
 import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify';
 import Fastify from 'fastify';
-import { fastifyTRPCOpenApiPlugin } from 'trpc-openapi';
+import { fastifyTRPCOpenApiPlugin } from '@potatohd/trpc-openapi';
 
 import { appRouter } from './router';
 
