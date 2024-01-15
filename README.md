@@ -25,9 +25,9 @@
 
 ```bash
 # npm
-npm install trpc-openapi
+npm install @potatohd/trpc-openapi
 # yarn
-yarn add trpc-openapi
+yarn add @potatohd/trpc-openapi
 ```
 
 **2. Add `OpenApiMeta` to your tRPC instance.**
